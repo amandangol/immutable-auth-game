@@ -1,17 +1,16 @@
 import React from 'react';
-import './App.css'; // Import your CSS styles here
-import Game from './components/Game'; // Import your Tic-Tac-Toe game component
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import Routes instead of Route
+import Login from './components/LoginComponent';
+import Game from './components/Game';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* You can add a title or header here */}
-      </header>
-      <main>
-        <Game /> {/* Render your Tic-Tac-Toe game component here */}
-      </main>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/game" element={<Game />} />
+      </Routes>
+    </Router>
   );
 }
 
